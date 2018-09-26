@@ -21,5 +21,5 @@
 
 ## 加入方式
 - 请在计维群私聊 `Rytia` 或者 `哲学家` 邀请你进入 Github 组织
-- 完成这份挑战吧：https://github.com/SCAU-Geek/takeOff-2018/blob/master/TAKEOFFF.md
+- 完成这份挑战吧：https://github.com/SCAU-Geek/takeOff-2018/blob/master/TAKEOFF.md
 - 完成后我们会主动去找你的，等我们哦
