@@ -58,7 +58,7 @@ def tomorrow_weather(area):
 
 	weather_data = main_resp_soul.find('li', class_='sky skyid lv1')
 	predict_data['weather'].append(weather_data.find('p').text)
-	predict_data['weather'].append(weather_data.find('p', class_='tem').find('i').text + ' - ' + weather_data.find('p', class_='tem').find('span').text + '℃')
+	predict_data['weather'].append(weather_data.find('p', class_='tem').find('i').text + ' - ' + weather_data.find('p', class_='tem').find('span').text.replace('℃','') + '℃')
 	predict_data['weather'].append(weather_data.find('p', class_='win').find('i').text)
 	#print(predict_data['weather'])
 
