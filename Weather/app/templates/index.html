@@ -116,6 +116,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.5/push.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.5/serviceWorker.min.js"></script>
     <script>
       var lineChartData = {
         labels: ['2时', '5时', '8时', '11时', '14时', '17时', '20时', '23时'],
@@ -161,21 +163,25 @@
         });
       };
     </script>
-    <!--
+
     <script>
-      $(function(){
-        $("button[name='area']").click(function(){
-            var data={};
-            data['area'] = $(this).text()
-            $.ajax({
-              type: 'POST',
-              url: '/index',
-              data: JSON.stringify(data),
-              contentType: 'application/json; charset=UTF-8'
-            });
+    function notify() {
+        Push.create('明日天气 ( 广州{{area}} )', {
+            body: '{{weather_data[0]}}\n{{weather_data[1]}}',
+            link: '/#',
+            requireInteraction: true,
+            onClick: function () {
+                window.focus();
+                this.close();
+            },
+            vibrate: [200, 100, 200, 100, 200, 100, 200]
         });
-      });
+    }
+
+    $(document).ready(function() {
+        notify();
+    });
     </script>
-    -->
+
   </body>
 </html>
