@@ -1,0 +1,67 @@
+<!--index.wxml-->
+<view class="container" style="min-height:{{screenHeight}}px;">
+  <!-- 背景图片 -->
+  <image class="bcg" mode="aspectFill" src="{{backgroundUrl}}"></image>
+  <view  style="display:flex; flex-direction:row; height:40px; line-height:40px; padding-top:10px; padding-left:10px;">
+    <image src="../../img/location.png" mode="widthFix" style="width:20px; margin:auto 0px;"></image>
+    <text style="font-size:20px;">{{city}}</text>
+  </view>
+  <!-- 实时温度 -->
+  <text class="temp">{{temperature}}°C</text>
+  <!-- 今日天气详情 -->
+  <view class="detailContainer">
+    <view class="detail">
+      <view class="detailItem">
+        <image class="icon" src="../../img/leaf.png" mode="widthFix"></image>
+        <text class="txt">{{aqi}}</text>
+      </view>
+      <view class="detailItem">
+        <image class="icon" src="../../img/temperature.png" mode="widthFix"></image>
+        <text class="txt">{{feelingTmp}}°C</text>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="detailItem">
+        <image class="icon" src="../../img/rain.png" mode="widthFix"></image>
+        <text class="txt">{{rainFallChance}}%</text>
+      </view>
+      <view class="detailItem">
+        <image class="icon" src="../../img/drops.png" mode="widthFix"></image>
+        <text class="txt">{{humidity}}%</text>
+      </view>
+    </view>
+    <view class="detail">
+      <view class="detailItem">
+        <image class="icon" src="../../img/wind.png" mode="widthFix"></image>
+        <text class="txt">{{windSpd}}km/h</text>
+      </view>
+      <view class="detailItem">
+        <image class="icon" src="../../img/compass.png" mode="widthFix"></image>
+        <text class="txt">{{windDir}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 天气预报 -->
+  <view class="forecast">
+    <view class="forecastItem" wx:for="{{weatherInfo}}" wx:key="{{forecastItem}}">
+      <text style="padding:8px;">{{index == 0 ? "今天" : index == 1 ? "明天" : "后天"}}</text>
+      <image src="../../img/{{item.cond_code_d}}.png" mode="widthFix" style="width:50px"></image>
+      <text style="font-size:12px; padding:8px;">{{item.tmp_min}}-{{item.tmp_max}}°C</text>
+    </view>
+  </view>
+  <!-- 生活指数 -->
+  <view class="livingIndex">
+    <view wx:for="{{livingIndex}}" wx:key="livingIndex" class="livingIndexItem" data-current="{{item.inx}}">
+      <image src="{{item.src}}" data-current="{{item.inx}}" bindtap="clickTab" mode="widthheight" style="display:block; margin:auto; height:40px; width: 40px;"></image>
+      <text class="{{currentTab==item.inx?'active':''}}" data-current="{{item.inx}}" bindtap="clickTab" style="display:block; text-align:center; width:auto; margin:5px; font-size: 13px;">{{item.brf}}</text>
+    </view>
+  </view>
+  <swiper current="{{currentTab}}" duration="300" bindchange="swipeTab" style="display:{{display}}; height:100px; margin:20px; margin-bottom:0px;">
+    <swiper-item wx:for="{{livingIndex}}" wx:key="livingIndex">
+      <view style="font-weight:bold; ">{{item.type}}</view>
+      <view style="margin-top:5px; font-size:15px;">{{item.txt}}</view>
+    </swiper-item>
+  </swiper>
+  <view style="height:40px;"></view>
+  <text class="footer">数据来源 · 和风天气</text>
+</view>
