@@ -6,7 +6,8 @@
 ## 如何使用
 
 - 1.安装 Java Runtime Environment
-- 2.双击 WeatherForecast-1.0.0.jar 运行
+- 2.下载 /club/magiccrazyman/weatherforecast/WeatherForecast-1.0.0.jar
+- 3.双击 WeatherForecast-1.0.0.jar 运行
 
 ## 数据来源以及第三方库
 
