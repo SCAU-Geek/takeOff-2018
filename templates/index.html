@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- jinrishici SDK -->
+	<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+	<!-- layui -->	
+	<script type="text/javascript" src="https://cdn.90so.net/layui/2.4.3/layui.js"></script>
+    <link rel="stylesheet" href="https://cdn.90so.net/layui/2.4.3/css/layui.css">
+	<title>明日天气</title>
+
+</head>
+<body>
+	<blockquote class="layui-elem-quote" id="date">今天是{{ date }}</blockquote>
+    <div class="layui-fluid">
+        <div class="layui-row">
+            <div class="layui-col-md2">
+                <div class="layui-elem-quote layui-anim layui-anim-upbit layui-col-md4" style="background-color:#ffffff;">{{ index_info | safe }}</div>
+            </div>
+            <div class="layui-col-md9">
+                <fieldset class="layui-elem-field">
+                    <legend>明日天气简报</legend>
+                    <div class="layui-field-box" style="line-height: 2.0em;">
+                        <div>天气：{{ weather }}</div>
+                        <div>风向：{{ wind }}</div>
+                        <div>最高温度：{{ high }}</div>
+                        <div>最低温度{{ low }}</div>
+                    </div>
+                </fieldset>
+                <blockquote class="layui-elem-quote" id="jinrishici-sentence">正在加载今日诗词......</blockquote>
+                <div>
+                    <span>技术支持</span>
+                    <span>
+                        <button class="layui-btn" href="https://www.jinrishici.com/#">今日诗词</button>
+                        <button class="layui-btn" href="https://www.layui.com/demo/grid.html">Layui</button>
+                    </span>
+                </div>
+                <hr>
+                <div>
+                    <span>信息来源</span>
+                    <button class="layui-btn" href="http://www.tianqi.com">天气网</button>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+	<footer>
+        <blockquote class="layui-elem-quote">©Weilet 2018</blockquote>
+	</footer>
+	
+</body>
+</html>
