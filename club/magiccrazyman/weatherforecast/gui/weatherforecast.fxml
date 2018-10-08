@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="backgroundPane" prefHeight="453.0" prefWidth="654.0" styleClass="mainFxmlClass" stylesheets="@weatherforecast.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="club.magiccrazyman.weatherforecast.gui.WeatherForecastController">
+   <children>
+      <HBox id="HPane" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <AnchorPane prefHeight="390.0" prefWidth="172.0" style="-fx-background-radius: 20;" styleClass="leftPane">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="20.0" />
+               </HBox.margin>
+               <children>
+                  <Text fx:id="cityText" fontSmoothingType="LCD" layoutX="8.0" layoutY="371.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="City" textAlignment="RIGHT" wrappingWidth="192.240234375">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="presentTempText" layoutX="14.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="00" wrappingWidth="90.240234375">
+                     <font>
+                        <Font size="64.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="93.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="°C" wrappingWidth="50.240234375">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="presentWeatherText" layoutX="14.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="weather" wrappingWidth="171.240234375">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="presentTimeText" layoutX="14.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="00:00:00" wrappingWidth="192.240234375">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="presentDateText" fill="WHITE" layoutX="18.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="0000-00-00" wrappingWidth="171.240234375">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <VBox prefHeight="380.0" prefWidth="365.0" styleClass="rightPane">
+               <HBox.margin>
+                  <Insets bottom="20.0" left="20.0" right="20.0" />
+               </HBox.margin>
+               <children>
+                  <GridPane alignment="CENTER" prefHeight="165.0" prefWidth="321.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="10.0" prefWidth="64.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="22.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fx:id="weatherDate0" onMouseClicked="#mouseClickDate" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="91.2802734375" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="dataSelect" />
+                           </styleClass>
+                        </Text>
+                        <Text fx:id="weatherDate1" onMouseClicked="#mouseClickDate" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="94.2802734375" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="dataSelect" />
+                           </styleClass>
+                        </Text>
+                        <Text fx:id="weatherDate2" onMouseClicked="#mouseClickDate" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="82.240234375" GridPane.columnIndex="3" GridPane.halignment="CENTER">
+                           <styleClass>
+                              <String fx:value="textField" />
+                              <String fx:value="dataSelect" />
+                           </styleClass>
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ImageView fx:id="weatherStatus0" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="weatherStatus1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="weatherStatus2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="weatherStatus3" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="weatherStatus4" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <ImageView fx:id="weatherStatus5" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" text="日间" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#3c5f81" strokeType="OUTSIDE" strokeWidth="0.0" text="夜间" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </GridPane>
+                  <GridPane prefHeight="218.0" prefWidth="301.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text fx:id="textBox00" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox01" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox02" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox03" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox04" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox05" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox06" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox10" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox11" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox12" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox13" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox14" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox15" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox16" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox17" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="textBox07" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textField" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="25.0" right="25.0" />
+                     </VBox.margin>
+                  </GridPane>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <BorderPane prefHeight="1.0" prefWidth="634.0">
+         <left>
+            <Label contentDisplay="RIGHT" prefHeight="18.0" prefWidth="403.0" text="数据来源：和风天气" textFill="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </left>
+         <center>
+            <TextField fx:id="searchField" focusTraversable="false" onKeyPressed="#searchNewCityOnKeyboard" prefHeight="23.0" prefWidth="137.0" promptText="请输入规范城市名称" style="-fx-background-radius: 5;" BorderPane.alignment="CENTER" />
+         </center>
+         <right>
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchNewCityOnButton" text="搜索" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="10.0" />
+               </BorderPane.margin>
+            </Button>
+         </right>
+         <VBox.margin>
+            <Insets left="5.0" right="30.0" />
+         </VBox.margin>
+      </BorderPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

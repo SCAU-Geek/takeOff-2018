@@ -1,0 +1,33 @@
+.mainFxmlClass {
+    -fx-background-image:url('../assets/img/0.png');
+    -fx-background-size:cover;
+}
+
+.rightPane{
+    -fx-background-color:rgba(255,255,255,0.4);
+    -fx-background-radius:20;
+}
+
+.textField{
+    -fx-fill:#ffffff;
+}
+
+.chart-plot-background{
+    -fx-background-color:transparent;
+}
+
+.chart-series-line{
+    -fx-stroke-width:2;
+}
+
+.chart-legend {
+    -fx-background-color:  transparent;
+}
+
+.chart-legend-item{
+    -fx-text-fill: #ffffff;
+}
+
+.dataSelect:hover{
+    -fx-cursor:hand;
+}
